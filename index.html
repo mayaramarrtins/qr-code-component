@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Github QR Code</title>
+    <link rel="shortcut icon" href="imagens/github-mark.png" type="image/x-icon">
+    <link rel="stylesheet" href="style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
+</head>
+
+<body>
+    <main class="liquidGlass-wrapper">
+        <svg style="position: absolute; width: 0; height: 0; overflow: hidden;" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+            <defs>
+                <filter id="glass-distortion">
+                    <feGaussianBlur in="SourceGraphic" stdDeviation="10" result="blur" />
+                    <feDisplacementMap in="blur" in2="SourceGraphic" scale="20" xChannelSelector="R" yChannelSelector="G" />
+                </filter>
+            </defs>
+        </svg>
+
+        <div class="liquidGlass-effect"></div>
+        <div class="liquidGlass-tint"></div>
+        <div class="liquidGlass-shine"></div>
+        <div class="liquidGlass-content">
+            <h1 class="card-title">Escaneie o QR Code</h1>
+            <p class="card-description">Acesse meu portfólio de projetos no GitHub.</p>
+            
+            <div class="qr-code-section">
+                <img src="imagens/github.png" alt="QR Code para verificação de dispositivo" class="qr-code-image">
+            </div>
+
+            <div class="manual">
+                <p class="manual-code-label">Ou acesse o site manualmente</p>
+                <div class="input-group">
+                    <input type="text" value="https://github.com/mayaramarrtins" class="code-input">
+                </div>
+            </div>
+
+            <button class="continue-button"><a href="https://github.com/mayaramarrtins" target="_blank">Continue</a></button>
+
+        </div>
+    </main>
+</body>
+</html>

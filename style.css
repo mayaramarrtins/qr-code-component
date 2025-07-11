@@ -1,0 +1,223 @@
+:root {
+  --primary-text-color: black;
+  --secondary-text-color: #666; 
+  --glass-background: rgba(255, 255, 255, 0.25);
+  --box-shadow-dark: rgba(0, 0, 0, 0.2);
+  --box-shadow-light: rgba(0, 0, 0, 0.1);
+  --shine-color: rgba(255, 255, 255, 0.5);
+  --border-radius-base: 1.5rem; 
+  --transition-cubic-bezier: cubic-bezier(0.175, 0.885, 0.32, 2.2);
+  --button-background: #007bff; 
+  --button-hover-background: #0056b3;
+  --input-background: rgba(255, 255, 255, 0.7);
+  --input-border-color: rgba(0, 0, 0, 0.1);
+    
+}
+
+body {
+    margin: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    min-height: 100vh;
+    background-image: url(imagens/fundo.jpg);
+    background-size: cover;
+    font-family: 'Poppins', sans-serif;
+    font-weight: 400;
+    color: var(--primary-text-color);
+    overflow: hidden; 
+}
+
+.liquidGlass-wrapper {
+  position: relative;
+  overflow: hidden;
+  box-shadow: 0 6px 20px var(--box-shadow-dark), 0 0 40px var(--box-shadow-light); 
+  transition: all 0.4s var(--transition-cubic-bezier);
+  border-radius: var(--border-radius-base);
+  padding: 2rem; 
+  display: flex;
+  flex-direction: column; 
+  align-items: center; 
+  max-width: 400px; 
+  width: 90%; 
+  text-align: center;
+}
+
+.liquidGlass-effect {
+  position: absolute;
+  z-index: 0;
+  inset: 0;
+  backdrop-filter: blur(12px); 
+  filter: url(#glass-distortion);
+  overflow: hidden;
+  isolation: isolate;
+  border-radius: inherit;
+}
+
+.liquidGlass-tint {
+  z-index: 1;
+  position: absolute;
+  inset: 0;
+  background: var(--glass-background);
+  border-radius: inherit;
+}
+
+.liquidGlass-shine {
+  position: absolute;
+  inset: 0;
+  z-index: 2;
+  overflow: hidden;
+  box-shadow: inset 2px 2px 3px 0 var(--shine-color), inset -1px -1px 2px 1px var(--shine-color); 
+  border-radius: inherit;
+}
+
+.liquidGlass-content {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    z-index: 3;
+    padding: 1rem 0;
+    gap: 1.5rem; 
+    width: 100%; 
+}
+
+.card-title {
+    font-size: 1.8rem;
+    font-weight: 600;
+    margin: 0;
+    color: var(--primary-text-color);
+}
+
+.card-description {
+    font-size: 0.9rem;
+    font-weight: 300;
+    margin: 0;
+    color: var(--secondary-text-color);
+    line-height: 1.4;
+}
+
+.qr-code-section {
+    background-color: white; 
+    padding: 1rem;
+    border-radius: 0.5rem;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1); 
+}
+
+.qr-code-image {
+    width: 180px; 
+    height: auto;
+    display: block;
+}
+
+.manual {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 0.5rem;
+    width: 100%;
+}
+
+.manual-code-label {
+    font-size: 0.85rem;
+    color: var(--secondary-text-color);
+    margin: 0;
+    font-weight: 400;
+}
+
+.input-group {
+    display: flex;
+    width: 100%;
+    max-width: 280px; 
+    border-radius: 0.5rem;
+    overflow: hidden;
+    background-color: var(--input-background);
+    border: 1px solid var(--input-border-color);
+}
+
+.code-input {
+    flex-grow: 1;
+    padding: 0.75rem 1rem;
+    border: none;
+    background: transparent;
+    font-size: 1rem;
+    color: var(--primary-text-color);
+    outline: none;
+}
+
+
+.continue-button {
+    background-color: var(--button-background);
+    color: white;
+    padding: 0.8rem 2.5rem;
+    border: none;
+    border-radius: 0.75rem; 
+    font-size: 1.1rem;
+    font-weight: 600;
+    cursor: pointer;
+    transition: background-color 0.3s ease, transform 0.2s ease;
+    width: calc(100% - 2rem); 
+    max-width: 280px; 
+    margin-top: 0.5rem; 
+    
+}
+
+.continue-button a {
+color: white;
+text-decoration: none;
+}
+
+.continue-button:hover {
+    background-color: var(--button-hover-background);
+    transform: translateY(-2px); 
+}
+
+
+/* Media Queries para Responsividade */
+@media (max-width: 768px) {
+  .liquidGlass-wrapper {
+    padding: 1.5rem;
+    max-width: 350px;
+  }
+
+  .card-title {
+    font-size: 1.6rem;
+  }
+
+  .qr-code-image {
+    width: 160px;
+  }
+
+  .continue-button {
+    padding: 0.7rem 2rem;
+    font-size: 1rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .liquidGlass-wrapper {
+    padding: 1rem;
+    max-width: 95%; 
+  }
+
+  .card-title {
+    font-size: 1.4rem;
+  }
+
+  .card-description {
+    font-size: 0.8rem;
+  }
+
+  .qr-code-image {
+    width: 140px;
+  }
+
+  .continue-button {
+    padding: 0.6rem 1.8rem;
+    font-size: 0.9rem;
+  }
+
+  .code-input {
+      font-size: 0.9rem;
+  }
+}
