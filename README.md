@@ -13,6 +13,7 @@ Design Responsivo: A página se adapta perfeitamente a diferentes tamanhos de te
 Efeito "Liquid Glass": Um visual moderno e translúcido que aprimora a experiência do usuário.
 
 <b> Tecnologias Utilizadas 🛠️ </b>
+
 HTML5: Estrutura da página.
 
 CSS3: Estilização e responsividade, incluindo o efeito "liquid glass".
